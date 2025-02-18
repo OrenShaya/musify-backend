@@ -1,1 +1,7 @@
-Coding Academy - production ready server 
+## API
+
+### `/api/auth`
+
+### `/api/user`
+
+### `/api/station`
