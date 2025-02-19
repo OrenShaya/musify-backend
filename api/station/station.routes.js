@@ -8,6 +8,8 @@ import {
   getStationById,
   addStation,
   updateStation,
+  addSong,
+  // removeSong,
   removeStation,
   addStationMsg,
   removeStationMsg,
@@ -22,6 +24,7 @@ router.get('/', log, getStations)
 router.get('/:id', log, getStationById)
 router.post('/', log, requireAuth, addStation)
 router.put('/:id', requireAuth, updateStation)
+router.post('/:id/song', requireAuth, addSong) // :id is station id
 router.delete('/:id', requireAuth, removeStation)
 // router.delete('/:id', requireAuth, requireAdmin, removeStation)
 

@@ -59,6 +59,26 @@ export async function updateStation(req, res) {
   }
 }
 
+export async function addSong(req, res) {
+  const { loggedinUser, body: song } = req
+  // const { _id: userId, isAdmin } = loggedinUser
+  const stationId = req.params.id
+
+  // TODO: check if it's user station
+  // if (!isAdmin && station.addedBy._id !== userId) {
+  //   res.status(403).send('Not your station...')
+  //   return
+  // }
+
+  try {
+    const updatedStation = await stationService.addSong(stationId, song)
+    res.json(updatedStation)
+  } catch (err) {
+    logger.error('Failed to update station', err)
+    res.status(400).send({ err: 'Failed to update station' })
+  }
+}
+
 export async function removeStation(req, res) {
   try {
     const stationId = req.params.id

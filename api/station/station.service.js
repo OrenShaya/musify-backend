@@ -13,6 +13,7 @@ export const stationService = {
   getById,
   add,
   update,
+  addSong,
   addStationMsg,
   removeStationMsg,
 }
@@ -88,7 +89,7 @@ async function add(station) {
 }
 
 async function update(station) {
-  const stationToSave = { vendor: station.vendor, speed: station.speed }
+  const stationToSave = { name: station.name, tags: station.tags }
 
   try {
     const criteria = { _id: ObjectId.createFromHexString(station._id) }
@@ -97,6 +98,17 @@ async function update(station) {
     await collection.updateOne(criteria, { $set: stationToSave })
 
     return station
+  } catch (err) {
+    logger.error(`cannot update station ${station._id}`, err)
+    throw err
+  }
+}
+
+async function addSong(stationId, song) {
+  try {
+    const criteria = { _id: ObjectId.createFromHexString(stationId) }
+    const collection = await dbService.getCollection(COLLECTION_NAME)
+    return await collection.updateOne(criteria, { $push: { songs: song } })
   } catch (err) {
     logger.error(`cannot update station ${station._id}`, err)
     throw err
