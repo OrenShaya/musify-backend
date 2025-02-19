@@ -19,7 +19,7 @@ export const stationService = {
 
 const COLLECTION_NAME = 'Stations'
 
-async function query(filterBy = { txt: '' }) {
+async function query(filterBy = { name: '', tags: [] }) {
   try {
     const criteria = _buildCriteria(filterBy)
     const sort = _buildSort(filterBy)
@@ -134,9 +134,14 @@ async function removeStationMsg(stationId, msgId) {
 
 function _buildCriteria(filterBy) {
   const criteria = {
-    vendor: { $regex: filterBy.txt, $options: 'i' },
-    speed: { $gte: filterBy.minSpeed },
+    name: { $regex: filterBy.name, $options: 'i' },
   }
+
+  if (filterBy.tags && filterBy.tags.length) {
+    criteria.tags = { $in: filterBy.tags }
+  }
+
+  // TODO: add for likedByUsers, songs
 
   return criteria
 }
