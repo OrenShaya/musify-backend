@@ -19,8 +19,6 @@ async function query(filterBy = {}) {
     users = users.map((user) => {
       delete user.password
       user.createdAt = user._id.getTimestamp()
-      // Returning fake fresh data
-      // user.createdAt = Date.now() - (1000 * 60 * 60 * 24 * 3) // 3 days ago
       return user
     })
     return users
@@ -76,7 +74,6 @@ async function update(user) {
     const userToSave = {
       _id: ObjectId.createFromHexString(user._id), // needed for the returnd obj
       fullname: user.fullname,
-      score: user.score,
     }
     const collection = await dbService.getCollection('user')
     await collection.updateOne({ _id: userToSave._id }, { $set: userToSave })
@@ -96,7 +93,6 @@ async function add(user) {
       fullname: user.fullname,
       imgUrl: user.imgUrl,
       isAdmin: user.isAdmin,
-      score: 100,
     }
     const collection = await dbService.getCollection('user')
     await collection.insertOne(userToAdd)
@@ -121,6 +117,7 @@ function _buildCriteria(filterBy) {
     ]
   }
   if (filterBy.minBalance) {
+    // TODO: remove this condition
     criteria.score = { $gte: filterBy.minBalance }
   }
   return criteria
