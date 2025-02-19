@@ -58,13 +58,13 @@ async function getById(stationId) {
 
 async function remove(stationId) {
   const { loggedinUser } = asyncLocalStorage.getStore()
-  const { _id: ownerId, isAdmin } = loggedinUser
+  // const { _id: ownerId, isAdmin } = loggedinUser
+  // TODO: check owner
 
   try {
     const criteria = {
       _id: ObjectId.createFromHexString(stationId),
     }
-    if (!isAdmin) criteria['owner._id'] = ownerId
 
     const collection = await dbService.getCollection(COLLECTION_NAME)
     const res = await collection.deleteOne(criteria)
