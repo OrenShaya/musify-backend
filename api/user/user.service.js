@@ -118,9 +118,5 @@ function _buildCriteria(filterBy) {
       },
     ]
   }
-  if (filterBy.minBalance) {
-    // TODO: remove this condition
-    criteria.score = { $gte: filterBy.minBalance }
-  }
   return criteria
 }
