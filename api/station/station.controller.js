@@ -79,6 +79,20 @@ export async function addSong(req, res) {
   }
 }
 
+export async function removeSong(req, res) {
+  const stationId = req.params.id
+  const songId = req.params.songId
+
+  try {
+    const removedId = await stationService.removeSong(stationId, songId)
+
+    res.send(removedId)
+  } catch (err) {
+    logger.error('Failed to remove station', err)
+    res.status(400).send({ err: 'Failed to remove station' })
+  }
+}
+
 export async function removeStation(req, res) {
   try {
     const stationId = req.params.id

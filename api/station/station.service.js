@@ -9,6 +9,7 @@ const PAGE_SIZE = 3
 
 export const stationService = {
   remove,
+  removeSong,
   query,
   getById,
   add,
@@ -67,6 +68,30 @@ async function remove(stationId) {
 
     const collection = await dbService.getCollection(COLLECTION_NAME)
     const res = await collection.deleteOne(criteria)
+
+    if (res.deletedCount === 0) throw 'Not your station'
+    return stationId
+  } catch (err) {
+    logger.error(`cannot remove station ${stationId}`, err)
+    throw err
+  }
+}
+
+async function removeSong(stationId, songId) {
+  const { loggedinUser } = asyncLocalStorage.getStore()
+  // const { _id: ownerId, isAdmin } = loggedinUser
+
+  // TODO: check if admin \ user's station
+
+  try {
+    const criteria = {
+      _id: ObjectId.createFromHexString(stationId),
+    }
+
+    const collection = await dbService.getCollection(COLLECTION_NAME)
+    const res = await collection.updateOne(criteria, {
+      $pull: { songs: { yt_id: songId } },
+    })
 
     if (res.deletedCount === 0) throw 'Not your station'
     return stationId

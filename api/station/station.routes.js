@@ -9,7 +9,7 @@ import {
   addStation,
   updateStation,
   addSong,
-  // removeSong,
+  removeSong,
   removeStation,
   addStationMsg,
   removeStationMsg,
@@ -26,6 +26,7 @@ router.post('/', log, requireAuth, addStation)
 router.put('/:id', requireAuth, updateStation)
 router.post('/:id/song', requireAuth, addSong) // :id is station id
 router.delete('/:id', requireAuth, removeStation)
+router.delete('/:id/:songId', requireAuth, removeSong)
 // router.delete('/:id', requireAuth, requireAdmin, removeStation)
 
 router.post('/:id/msg', requireAuth, addStationMsg)
