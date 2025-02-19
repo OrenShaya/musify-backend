@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "0f1efe92-7981-4c9b-b375-afa2f097049e",
+		"name": "E2E",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5821737"
+	},
+	"item": [
+		{
+			"name": "Station",
+			"item": [
+				{
+					"name": "Stations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/station/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"station",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Station",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/station/:stationId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"station",
+								":stationId"
+							],
+							"variable": [
+								{
+									"key": "stationId",
+									"value": "67b4d53e6234d423366b4294"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Station",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/station/658c02a1cce9d0d09bcabe8e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"station",
+								"658c02a1cce9d0d09bcabe8e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Song",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/station/:id/:songId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"station",
+								":id",
+								":songId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67b4d53e6234d423366b4294"
+								},
+								{
+									"key": "songId",
+									"value": "VxVzT0znI8Q"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Station",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Funky Monks\",\n  \"tags\": [\"Funk\", \"Happy\"],\n  \"createdBy\": {\n    \"_id\": \"u101\",\n    \"fullname\": \"Puki Ben David\",\n    \"imgUrl\": \"https://yt3.ggpht.com/ytc/AIdro_m6xYq7ErRAA9YY3XG3NLAOZJRfV67Edf-dV9qZD2T-Ak4=s800-c-k-c0x00ffffff-no-rj\"\n  },\n  \"likedByUsers\": [],\n  \"songs\": [\n    {\n      \"id\": \"s1001\",\n      \"title\": \"The Meters - Cissy Strut\",\n      \"url\": \"youtube/song.mp4\",\n      \"imgUrl\": \"https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg\",\n      \"addedBy\": {\n        \"_id\": \"67b5b99f22aca76d9a057321\",\n        \"username\": \"guest\",\n        \"fullname\": \"Gustavo Gaviria\",\n        \"imgUrl\": null,\n        \"isAdmin\": null\n    },\n      \"likedBy\": [],\n      \"addedAt\": 162521765262\n    },\n    {\n      \"id\": \"mUkfiLjooxs\",\n      \"title\": \"The JB's - Pass The Peas\",\n      \"url\": \"youtube/song.mp4\",\n      \"imgUrl\": \"https://i.ytimg.com/vi/mUkfiLjooxs/mqdefault.jpg\",\n      \"addedBy\": {\n        \"_id\": \"67b5b99f22aca76d9a057321\",\n        \"username\": \"guest\",\n        \"fullname\": \"Gustavo Gaviria\",\n        \"imgUrl\": null,\n        \"isAdmin\": null\n        }\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/station",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"station"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Station",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"67b4d53e6234d423366b4294\",\n    \"name\": \"PUT /station NAME\",\n    \"description\": \"Look my station very nice\",\n    \"createdBy\": {\n        \"imgUrl\": \"https://images.unsplash.com/photo-1739869610059-86fabc7bcd7b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/station/:stationId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"station",
+								":stationId"
+							],
+							"variable": [
+								{
+									"key": "stationId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Song",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"title\": \"let's post TEST\",\r\n                \"url\": \"https://www.youtube.com/embed/VxVzT0znI8Q\",\r\n                \"imgUrl\": \"https://i.ytimg.com/vi/VxVzT0znI8Q/hqdefault.jpg\",\r\n                \"addedBy\": {\r\n                    \"yt_id\": \"UC7-YMmnc0ppcWmio8t1WdcA\",\r\n                    \"fullname\": \"System Of A Down\",\r\n                    \"imgUrl\": \"https://yt3.ggpht.com/ytc/AIdro_m6xYq7ErRAA9YY3XG3NLAOZJRfV67Edf-dV9qZD2T-Ak4=s800-c-k-c0x00ffffff-no-rj\"\r\n                },\r\n                \"lengthInSeconds\": 237,\r\n                \"likedBy\": [],\r\n                \"createdAt\": 1613765872000,\r\n                \"updatedAt\": 1739574807264,\r\n                \"yt_id\": \"VxVzT0znI8Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/station/:id/song",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"station",
+								":id",
+								"song"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67b4d53e6234d423366b4294"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"guest\",\n    \"password\": \"guest\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"guest\",\n    \"password\": \"guest\",\n    \"fullname\": \"Gustavo Gaviria\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/user/67b5b31ed806d3b1244c0c42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"user",
+								"67b5b31ed806d3b1244c0c42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\",\r\n    \"fullname\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/api/user/67b5bcf324eb6dec834c5a1d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"user",
+								"67b5bcf324eb6dec834c5a1d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3030/api/user/664f8261e6205c622dbc14e2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"user",
+								"664f8261e6205c622dbc14e2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
