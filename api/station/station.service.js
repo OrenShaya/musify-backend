@@ -17,12 +17,14 @@ export const stationService = {
   removeStationMsg,
 }
 
+const COLLECTION_NAME = 'Stations'
+
 async function query(filterBy = { txt: '' }) {
   try {
     const criteria = _buildCriteria(filterBy)
     const sort = _buildSort(filterBy)
 
-    const collection = await dbService.getCollection('station')
+    const collection = await dbService.getCollection(COLLECTION_NAME)
     var stationCursor = await collection.find(criteria, { sort })
 
     if (filterBy.pageIdx !== undefined) {
@@ -41,7 +43,7 @@ async function getById(stationId) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }
 
-    const collection = await dbService.getCollection('station')
+    const collection = await dbService.getCollection(COLLECTION_NAME)
     const station = await collection.findOne(criteria)
 
     station.createdAt = station._id.getTimestamp()
@@ -62,7 +64,7 @@ async function remove(stationId) {
     }
     if (!isAdmin) criteria['owner._id'] = ownerId
 
-    const collection = await dbService.getCollection('station')
+    const collection = await dbService.getCollection(COLLECTION_NAME)
     const res = await collection.deleteOne(criteria)
 
     if (res.deletedCount === 0) throw 'Not your station'
@@ -75,7 +77,7 @@ async function remove(stationId) {
 
 async function add(station) {
   try {
-    const collection = await dbService.getCollection('station')
+    const collection = await dbService.getCollection(COLLECTION_NAME)
     await collection.insertOne(station)
 
     return station
@@ -91,7 +93,7 @@ async function update(station) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(station._id) }
 
-    const collection = await dbService.getCollection('station')
+    const collection = await dbService.getCollection(COLLECTION_NAME)
     await collection.updateOne(criteria, { $set: stationToSave })
 
     return station
@@ -106,7 +108,7 @@ async function addStationMsg(stationId, msg) {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }
     msg.id = makeId()
 
-    const collection = await dbService.getCollection('station')
+    const collection = await dbService.getCollection(COLLECTION_NAME)
     await collection.updateOne(criteria, { $push: { msgs: msg } })
 
     return msg
@@ -120,7 +122,7 @@ async function removeStationMsg(stationId, msgId) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }
 
-    const collection = await dbService.getCollection('station')
+    const collection = await dbService.getCollection(COLLECTION_NAME)
     await collection.updateOne(criteria, { $pull: { msgs: { id: msgId } } })
 
     return msgId
