@@ -149,7 +149,7 @@ async function likeSong(songId, userId) {
     const criteria = { 'songs.yt_id': songId }
     const collection = await dbService.getCollection(COLLECTION_NAME)
     const updated = await collection.updateOne(criteria, {
-      $push: { likedByUsers: userId },
+      $push: { 'songs.$.likedByUsers': userId },
     })
 
     return updated
