@@ -61,10 +61,14 @@ export async function updateStation(req, res) {
 
 export async function likeSong(req, res) {
   const userId = req.loggedinUser._id
+  const stationId = req.params.stationId
   const songId = req.params.songId
-
   try {
-    const updatedStation = await stationService.likeSong(songId, userId)
+    const updatedStation = await stationService.likeSong(
+      stationId,
+      songId,
+      userId
+    )
     res.json(updatedStation)
   } catch (err) {
     logger.error('Failed to update station', err)

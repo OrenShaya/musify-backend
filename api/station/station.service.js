@@ -144,9 +144,12 @@ async function update(station) {
   }
 }
 
-async function likeSong(songId, userId) {
+async function likeSong(stationId, songId, userId) {
   try {
-    const criteria = { 'songs.yt_id': songId }
+    const criteria = {
+      _id: ObjectId.createFromHexString(stationId),
+      'songs.yt_id': songId,
+    }
     const collection = await dbService.getCollection(COLLECTION_NAME)
     const updated = await collection.updateOne(criteria, {
       $push: { 'songs.$.likedByUsers': userId },
