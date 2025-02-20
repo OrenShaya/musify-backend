@@ -182,7 +182,8 @@ async function addSong(stationId, song) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }
     const collection = await dbService.getCollection(COLLECTION_NAME)
-    return await collection.updateOne(criteria, { $push: { songs: song } })
+    await collection.updateOne(criteria, { $push: { songs: song } })
+    return song
   } catch (err) {
     logger.error(`cannot update station ${station._id}`, err)
     throw err
