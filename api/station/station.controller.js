@@ -76,6 +76,23 @@ export async function likeSong(req, res) {
   }
 }
 
+export async function unlikeSong(req, res) {
+  const userId = req.loggedinUser._id
+  const stationId = req.params.stationId
+  const songId = req.params.songId
+  try {
+    const updatedStation = await stationService.unlikeSong(
+      stationId,
+      songId,
+      userId
+    )
+    res.json(updatedStation)
+  } catch (err) {
+    logger.error('Failed to update station', err)
+    res.status(400).send({ err: 'Failed to update station' })
+  }
+}
+
 export async function addSong(req, res) {
   const { loggedinUser, body: song } = req
   // const { _id: userId, isAdmin } = loggedinUser

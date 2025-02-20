@@ -18,6 +18,7 @@ export const stationService = {
   addStationMsg,
   removeStationMsg,
   likeSong,
+  unlikeSong,
 }
 
 const COLLECTION_NAME = 'Stations'
@@ -161,6 +162,22 @@ async function likeSong(stationId, songId, userId) {
   }
 }
 
+async function unlikeSong(stationId, songId, userId) {
+  try {
+    const criteria = {
+      _id: ObjectId.createFromHexString(stationId),
+      'songs.yt_id': songId,
+    }
+    const collection = await dbService.getCollection(COLLECTION_NAME)
+    const updated = await collection.updateOne(criteria, {
+      $pull: { 'songs.$.likedByUsers': userId },
+    })
+    return updated
+  } catch (err) {
+    logger.error(`cannot update station ${station._id}`, err)
+    throw err
+  }
+}
 async function addSong(stationId, song) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }

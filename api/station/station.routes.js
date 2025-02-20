@@ -14,6 +14,7 @@ import {
   removeStation,
   addStationMsg,
   removeStationMsg,
+  unlikeSong,
 } from './station.controller.js'
 
 const router = express.Router()
@@ -25,6 +26,7 @@ router.get('/', log, getStations)
 router.get('/:id', log, getStationById)
 router.post('/', log, requireAuth, addStation)
 router.post('/:stationId/:songId/like', log, requireAuth, likeSong)
+router.post('/:stationId/:songId/unlike', log, requireAuth, unlikeSong)
 router.put('/:id', requireAuth, updateStation)
 router.post('/:id/song', requireAuth, addSong) // :id is station id
 router.delete('/:id', requireAuth, removeStation)
