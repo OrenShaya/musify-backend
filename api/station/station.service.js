@@ -152,9 +152,8 @@ async function likeSong(stationId, songId, userId) {
     }
     const collection = await dbService.getCollection(COLLECTION_NAME)
     const updated = await collection.updateOne(criteria, {
-      $push: { 'songs.$.likedByUsers': userId },
+      $addToSet: { 'songs.$.likedByUsers': userId },
     })
-
     return updated
   } catch (err) {
     logger.error(`cannot update station ${station._id}`, err)
