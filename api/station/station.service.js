@@ -17,6 +17,7 @@ export const stationService = {
   addSong,
   addStationMsg,
   removeStationMsg,
+  likeSong,
 }
 
 const COLLECTION_NAME = 'Stations'
@@ -137,6 +138,21 @@ async function update(station) {
     await collection.updateOne(criteria, { $set: stationToSave })
 
     return station
+  } catch (err) {
+    logger.error(`cannot update station ${station._id}`, err)
+    throw err
+  }
+}
+
+async function likeSong(songId, userId) {
+  try {
+    const criteria = { 'songs.yt_id': songId }
+    const collection = await dbService.getCollection(COLLECTION_NAME)
+    const updated = await collection.updateOne(criteria, {
+      $push: { likedByUsers: userId },
+    })
+
+    return updated
   } catch (err) {
     logger.error(`cannot update station ${station._id}`, err)
     throw err
