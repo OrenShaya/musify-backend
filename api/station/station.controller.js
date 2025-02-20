@@ -94,7 +94,7 @@ export async function unlikeSong(req, res) {
 }
 
 export async function addSong(req, res) {
-  const { loggedinUser } = req
+  // const { loggedinUser } = req
   // const { _id: userId, isAdmin } = loggedinUser
   const stationId = req.params.id
   const song = req.body

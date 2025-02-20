@@ -157,7 +157,7 @@ async function likeSong(stationId, songId, userId) {
     })
     return updated
   } catch (err) {
-    logger.error(`cannot update station ${station._id}`, err)
+    logger.error(`cannot update station ${stationId}`, err)
     throw err
   }
 }
@@ -174,7 +174,7 @@ async function unlikeSong(stationId, songId, userId) {
     })
     return updated
   } catch (err) {
-    logger.error(`cannot update station ${station._id}`, err)
+    logger.error(`cannot update station ${stationId}`, err)
     throw err
   }
 }
@@ -182,10 +182,10 @@ async function addSong(stationId, song) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }
     const collection = await dbService.getCollection(COLLECTION_NAME)
-    await collection.updateOne(criteria, { $push: { songs: song } },{ returnDocument: 'after' })
-    return result.value 
+    await collection.updateOne(criteria, { $push: { songs: song } })
+    return song
   } catch (err) {
-    logger.error(`cannot update station ${station._id}`, err)
+    logger.error(`cannot update station ${stationId}`, err)
     throw err
   }
 }
