@@ -149,6 +149,7 @@ async function likeSong(stationId, songId, userId) {
   // 2 steps: 1. Update station ; 2. Update user's liked songs
   const song = await _updateStation()
   await _updateUser()
+  return song
 
   async function _updateUser() {
     try {
@@ -190,21 +191,45 @@ async function likeSong(stationId, songId, userId) {
 }
 
 async function unlikeSong(stationId, songId, userId) {
-  try {
-    const criteria = {
-      _id: ObjectId.createFromHexString(stationId),
-      'songs.yt_id': songId,
+  // 2 steps: 1. Update station ; 2. Update user's liked songs
+  await _updateStation()
+  const result = await _updateUser()
+  return result
+
+  async function _updateUser() {
+    try {
+      const criteria = {
+        _id: ObjectId.createFromHexString(userId),
+      }
+      const collection = await dbService.getCollection('Users')
+      const updated = await collection.updateOne(criteria, {
+        $pull: { 'likedSongsStation.songs': { yt_id: songId } },
+      })
+      return updated
+    } catch (err) {
+      logger.error(`cannot update station ${stationId}`, err)
+      throw err
     }
-    const collection = await dbService.getCollection(COLLECTION_NAME)
-    const updated = await collection.updateOne(criteria, {
-      $pull: { 'songs.$.likedByUsers': userId },
-    })
-    return updated
-  } catch (err) {
-    logger.error(`cannot update station ${stationId}`, err)
-    throw err
+  }
+
+  async function _updateStation() {
+    try {
+      const criteria = {
+        _id: ObjectId.createFromHexString(stationId),
+        'songs.yt_id': songId,
+      }
+      const collection = await dbService.getCollection(COLLECTION_NAME)
+      const updated = await collection.updateOne(criteria, {
+        $pull: { 'songs.$.likedByUsers': userId },
+      })
+      return updated
+    } catch (err) {
+      logger.error(`cannot update station ${stationId}`, err)
+      throw err
+    }
   }
 }
+
 async function addSong(stationId, song) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }
