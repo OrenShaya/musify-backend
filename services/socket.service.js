@@ -53,10 +53,9 @@ export function setupSocketAPI(http) {
       logger.info(`Removing socket.userId for socket [id: ${socket.id}]`)
       delete socket.userId
     })
-    socket.on(SOCKET_EMIT_ADD_SONG, ({ songId, stationId }) => {
-      logger.info(`Add song [id: ${socket.id}] - ${songId} ${stationId}`)
-      // socket.broadcast.emit(SOCKET_EVENT_ADD_SONG, { songId, stationId })
-      gIo.emit(SOCKET_EVENT_ADD_SONG, { songId, stationId })
+    socket.on(SOCKET_EMIT_ADD_SONG, ({ song, stationId }) => {
+      logger.info(`Add song [id: ${socket.id}] - ${song} ${stationId}`)
+      socket.broadcast.emit(SOCKET_EVENT_ADD_SONG, { song, stationId })
     })
   })
 }
