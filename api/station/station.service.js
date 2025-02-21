@@ -161,7 +161,7 @@ async function likeSong(stationId, songId, userId) {
       })
       return updated
     } catch (err) {
-      logger.error(`cannot update station ${station._id}`, err)
+      logger.error(`cannot update station ${stationId}`, err)
       throw err
     }
   }
@@ -183,7 +183,7 @@ async function likeSong(stationId, songId, userId) {
 
       return result.songs[0]
     } catch (err) {
-      logger.error(`cannot update station ${station._id}`, err)
+      logger.error(`cannot update station ${stationId}`, err)
       throw err
     }
   }
