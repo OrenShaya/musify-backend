@@ -232,7 +232,10 @@ async function unlikeSong(stationId, songId, userId) {
 
 async function addSong(stationId, song) {
   try {
-    const criteria = { _id: ObjectId.createFromHexString(stationId) }
+    const criteria = {
+      _id: ObjectId.createFromHexString(stationId),
+      'songs.yt_id': { $ne: song.yt_id },
+    }
     const collection = await dbService.getCollection(COLLECTION_NAME)
     await collection.updateOne(criteria, { $addToSet: { songs: song } })
     return song
