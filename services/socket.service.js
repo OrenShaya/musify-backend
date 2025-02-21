@@ -26,7 +26,7 @@ export function setupSocketAPI(http) {
       socket.myTopic = topic
     })
     socket.on('chat-send-msg', (msg) => {
-      logger.nfo(
+      logger.info(
         `New chat msg from socket [id: ${socket.id}], emitting to topic ${socket.myTopic}`
       )
       // emits to all sockets:
@@ -49,6 +49,11 @@ export function setupSocketAPI(http) {
     socket.on('unset-user-socket', () => {
       logger.info(`Removing socket.userId for socket [id: ${socket.id}]`)
       delete socket.userId
+    })
+    socket.on('add-song', (songId, stationId) => {
+      logger.info(
+        `Add song [id: ${socket.id}], emitting to topic ${socket.myTopic}`
+      )
     })
   })
 }
