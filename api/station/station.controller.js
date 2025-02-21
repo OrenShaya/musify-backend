@@ -32,7 +32,8 @@ export async function addStation(req, res) {
   const { loggedinUser, body: station } = req
 
   try {
-    station.createdBy = loggedinUser
+    if(!station?.createdBy) station.createdBy= loggedinUser
+    
     const addedStation = await stationService.add(station)
     res.json(addedStation)
   } catch (err) {
