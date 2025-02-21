@@ -201,7 +201,7 @@ async function unlikeSong(stationId, songId, userId) {
     })
     return updated
   } catch (err) {
-    logger.error(`cannot update station ${station._id}`, err)
+    logger.error(`cannot update station ${stationId}`, err)
     throw err
   }
 }
@@ -212,7 +212,7 @@ async function addSong(stationId, song) {
     await collection.updateOne(criteria, { $push: { songs: song } })
     return song
   } catch (err) {
-    logger.error(`cannot update station ${station._id}`, err)
+    logger.error(`cannot update station ${stationId}`, err)
     throw err
   }
 }

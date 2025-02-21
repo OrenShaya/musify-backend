@@ -94,9 +94,10 @@ export async function unlikeSong(req, res) {
 }
 
 export async function addSong(req, res) {
-  const { loggedinUser, body: song } = req
+  // const { loggedinUser } = req
   // const { _id: userId, isAdmin } = loggedinUser
   const stationId = req.params.id
+  const song = req.body
 
   // TODO: check if it's user station
   // if (!isAdmin && station.addedBy._id !== userId) {
