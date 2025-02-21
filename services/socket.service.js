@@ -1,6 +1,9 @@
 import { logger } from './logger.service.js'
 import { Server } from 'socket.io'
 
+const SOCKET_EMIT_ADD_SONG = 'add-song'
+const SOCKET_EVENT_ADD_SONG = 'song-added'
+
 var gIo = null
 
 export function setupSocketAPI(http) {
@@ -50,10 +53,10 @@ export function setupSocketAPI(http) {
       logger.info(`Removing socket.userId for socket [id: ${socket.id}]`)
       delete socket.userId
     })
-    socket.on('add-song', (songId, stationId) => {
-      logger.info(
-        `Add song [id: ${socket.id}], emitting to topic ${socket.myTopic}`
-      )
+    socket.on(SOCKET_EMIT_ADD_SONG, ({ songId, stationId }) => {
+      logger.info(`Add song [id: ${socket.id}] - ${songId} ${stationId}`)
+      // socket.broadcast.emit(SOCKET_EVENT_ADD_SONG, { songId, stationId })
+      gIo.emit(SOCKET_EVENT_ADD_SONG, { songId, stationId })
     })
   })
 }
