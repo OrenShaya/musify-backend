@@ -146,19 +146,46 @@ async function update(station) {
 }
 
 async function likeSong(stationId, songId, userId) {
-  try {
-    const criteria = {
-      _id: ObjectId.createFromHexString(stationId),
-      'songs.yt_id': songId,
+  // 2 steps: 1. Update station ; 2. Update user's liked songs
+  const song = await _updateStation()
+  await _updateUser()
+
+  async function _updateUser() {
+    try {
+      const criteria = {
+        _id: ObjectId.createFromHexString(userId),
+      }
+      const collection = await dbService.getCollection('Users')
+      const updated = await collection.updateOne(criteria, {
+        $addToSet: { 'likedSongsStation.songs': song },
+      })
+      return updated
+    } catch (err) {
+      logger.error(`cannot update station ${station._id}`, err)
+      throw err
     }
-    const collection = await dbService.getCollection(COLLECTION_NAME)
-    const updated = await collection.updateOne(criteria, {
-      $addToSet: { 'songs.$.likedByUsers': userId },
-    })
-    return updated
-  } catch (err) {
-    logger.error(`cannot update station ${station._id}`, err)
-    throw err
+  }
+
+  async function _updateStation() {
+    try {
+      const criteria = {
+        _id: ObjectId.createFromHexString(stationId),
+        'songs.yt_id': songId,
+      }
+      const collection = await dbService.getCollection(COLLECTION_NAME)
+      const updated = await collection.updateOne(criteria, {
+        $addToSet: { 'songs.$.likedByUsers': userId },
+      })
+
+      const result = await collection.findOne(criteria, {
+        projection: { songs: { $elemMatch: { yt_id: songId } } },
+      })
+
+      return result.songs[0]
+    } catch (err) {
+      logger.error(`cannot update station ${station._id}`, err)
+      throw err
+    }
   }
 }
 
