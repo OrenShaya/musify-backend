@@ -27,13 +27,13 @@ async function login(username, password) {
   return user
 }
 
-async function signup({ username, password, fullname, imgUrl, isAdmin }) {
+async function signup({ username, password, email, imgUrl, isAdmin }) {
   const saltRounds = 10
 
   logger.debug(
-    `auth.service - signup with username: ${username}, fullname: ${fullname}`
+    `auth.service - signup with username: ${username}, email: ${email}`
   )
-  if (!username || !password || !fullname)
+  if (!username || !password || !email)
     return Promise.reject('Missing required signup information')
 
   const userExist = await userService.getByUsername(username)
@@ -43,7 +43,7 @@ async function signup({ username, password, fullname, imgUrl, isAdmin }) {
   return userService.add({
     username,
     password: hash,
-    fullname,
+    email,
     imgUrl,
     isAdmin,
   })
