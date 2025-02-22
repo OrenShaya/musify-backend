@@ -1,0 +1,163 @@
+[{
+  "_id": {
+    "$oid": "67b5bdfac770ab740f4374d6"
+  },
+  "username": "guest",
+  "password": "$2b$10$GkiIGsiLywVurOZifRzG4OPE/BHqMajOdU0menfhi.tZhxYlDIPQO",
+  "fullname": "Gustavo Gaviria",
+  "isAdmin": false,
+  "stationGroups": [
+    {
+      "name": "Dan's recommendations",
+      "stations": [
+        "67b5df6400c79d122e8c08e5"
+      ]
+    },
+    {
+      "name": "Dor's recommendations",
+      "stations": [
+        "67b5df6400c79d122e8c08e6"
+      ]
+    },
+    {
+      "name": "Oren's recommendations",
+      "stations": [
+        "67b5df6400c79d122e8c08e7"
+      ]
+    },
+    {
+      "name": "Shahar's recommendations",
+      "stations": [
+        "67b5df6400c79d122e8c08e8"
+      ]
+    }
+  ],
+  "imgUrl": "https://res.cloudinary.com/dww0sism8/image/upload/fl_preserve_transparency/v1740066129/G-user_fpskkf.jpg?_s=public-apps",
+  "likedSongsStation": {
+    "_id": {
+      "$oid": "67b83d0e7d86f6d63dbee073"
+    },
+    "songs": [
+      {
+        "title": "The Trooper",
+        "url": "https://www.youtube.com/embed/W4DfbinBgL4",
+        "imgUrl": "https://i.ytimg.com/vi/W4DfbinBgL4/hqdefault.jpg",
+        "addedBy": {
+          "yt_id": "UCNifdat21zAF8ux2AcQBgYg",
+          "fullname": "Rodolfo Carmacio",
+          "imgUrl": "https://yt3.ggpht.com/ytc/AIdro_m8nVVONNJpq0VOCk2ozCtz9iVXPqiKdXl9qwn4gr42fWM=s800-c-k-c0x00ffffff-no-rj"
+        },
+        "lengthInSeconds": 51,
+        "createdAt": 1584033979000,
+        "updatedAt": 1739533854214,
+        "yt_id": "W4DfbinBgL4",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6"
+        ]
+      }
+    ],
+    "createdBy": {
+      "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740086846/ohum8u1qpefvb0lmwgkt.jpg"
+    },
+    "name": "Liked Songs",
+    "yt_id": "THE-CAKE-IS-A-LIE"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b71a99c2457866c41c63a2"
+  },
+  "username": "admin",
+  "password": "$2b$10$z7EEe0.KYXJJBIpzrtM8Ue5DMu1cGpu/8VTpR0wUnI20bF.d9/Tpq",
+  "fullname": "Godmin",
+  "imgUrl": "https://res.cloudinary.com/dww0sism8/image/upload/v1740077686/Untitled_bfozvu.png",
+  "isAdmin": true
+},
+{
+  "_id": {
+    "$oid": "67b9c300c94ccd8398019e02"
+  },
+  "username": "dor",
+  "password": "$2b$10$Xi6.T661jCMR3uIdGdxV5OOxnwhj.znZ1uWTDSOAGk.t8gheNrTZy",
+  "fullname": "Dor",
+  "imgUrl": null,
+  "isAdmin": null,
+  "likedSongsStation": {
+    "songs": [],
+    "createdBy": {
+      "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740086846/ohum8u1qpefvb0lmwgkt.jpg"
+    },
+    "name": "Liked Songs",
+    "yt_id": "THE-CAKE-IS-A-LIE"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b9dd2083f9296ea18d716d"
+  },
+  "username": "asd",
+  "password": "$2b$10$jOvCKmJfsu7iXyKCDxIAZ.dR4Ttnv1nAQJ8185mezw5JHHxadt1TC",
+  "fullname": null,
+  "imgUrl": "/src/assets/img/G-user.png",
+  "isAdmin": null
+},
+{
+  "_id": {
+    "$oid": "67b9df6383f9296ea18d716e"
+  },
+  "username": "newuser",
+  "password": "$2b$10$XgP9smFguSA6kw1VYcPOteRXgltJ37KgBaYtD4a8uRac1t/ukfhLK",
+  "fullname": null,
+  "imgUrl": "/src/assets/img/G-user.png",
+  "isAdmin": null
+},
+{
+  "_id": {
+    "$oid": "67b9e23783f9296ea18d716f"
+  },
+  "username": "new123",
+  "password": "$2b$10$beXemlHI3BmueDIbA58XxuBNd7a/gWj4bE5fA/amSphwfSJ00eYUy",
+  "fullname": null,
+  "imgUrl": "/src/assets/img/G-user.png",
+  "isAdmin": null
+},
+{
+  "_id": {
+    "$oid": "67b9e26983f9296ea18d7170"
+  },
+  "username": "1234",
+  "password": "$2b$10$MADlQNmFSdOnTmzTNnzkp.NLwEdc/tfuRSaAq33cMVsdArmdCDake",
+  "fullname": null,
+  "imgUrl": "/src/assets/img/G-user.png",
+  "isAdmin": null
+},
+{
+  "_id": {
+    "$oid": "67b9e30b83f9296ea18d7171"
+  },
+  "username": "12345",
+  "password": "$2b$10$TDa9YpFVUtoBkotoCRyWcO6yDdfh/IKjVG9D5EGr9mYD0FT4kymOS",
+  "fullname": null,
+  "imgUrl": "/src/assets/img/G-user.png",
+  "isAdmin": null
+},
+{
+  "_id": {
+    "$oid": "67b9e38e83f9296ea18d7172"
+  },
+  "username": "new1234",
+  "password": "$2b$10$OSOCmUO7XK0oXT5ztfgJk.rqUbe.Xyi5GFp3pl5H3gwvqDwQnkmSa",
+  "fullname": null,
+  "imgUrl": "/src/assets/img/G-user.png",
+  "isAdmin": null
+},
+{
+  "_id": {
+    "$oid": "67b9f8e083f9296ea18d7173"
+  },
+  "username": "123123",
+  "password": "$2b$10$R3EvXrHauNOHPx37uWXrC.EHTZl429IjNMvE9L0jJQF1eRKF0qU.i",
+  "fullname": null,
+  "imgUrl": "/src/assets/img/G-user.png",
+  "isAdmin": null
+}]
