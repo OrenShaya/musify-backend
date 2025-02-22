@@ -46,6 +46,15 @@ async function signup({ username, password, fullname, imgUrl, isAdmin }) {
     fullname,
     imgUrl,
     isAdmin,
+    likedSongsStation: {
+      songs: [],
+      createdBy: {
+        imgUrl:
+          'https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740086846/ohum8u1qpefvb0lmwgkt.jpg',
+      },
+      name: 'Liked Songs',
+      yt_id: 'THE-CAKE-IS-A-LIE',
+    },
   })
 }
 
