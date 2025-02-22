@@ -31,9 +31,9 @@ async function query(filterBy = { name: '', tags: [] }) {
     const collection = await dbService.getCollection(COLLECTION_NAME)
     var stationCursor = await collection.find(criteria, { sort })
 
-    if (filterBy.pageIdx !== undefined) {
-      stationCursor.skip(filterBy.pageIdx * PAGE_SIZE).limit(PAGE_SIZE)
-    }
+    // if (filterBy.pageIdx !== undefined) {
+    //   stationCursor.skip(filterBy.pageIdx * PAGE_SIZE).limit(PAGE_SIZE)
+    // }
 
     const stations = stationCursor.toArray()
     return stations
@@ -275,16 +275,15 @@ async function removeStationMsg(stationId, msgId) {
 }
 
 function _buildCriteria(filterBy) {
-  const criteria = {
-    name: { $regex: filterBy.name, $options: 'i' },
+  const criteria = {}
+  
+  if (filterBy.name && filterBy.name.trim()) {
+    criteria.name = { $regex: filterBy.name.trim(), $options: 'i' }
   }
-
+  
   if (filterBy.tags && filterBy.tags.length) {
     criteria.tags = { $in: filterBy.tags }
   }
-
-  // TODO: add for likedByUsers, songs
-
   return criteria
 }
 

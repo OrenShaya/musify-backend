@@ -4,7 +4,7 @@ import { stationService } from './station.service.js'
 export async function getStations(req, res) {
   try {
     const filterBy = {
-      name: req.query.txt || '',
+      name: req.query.name || '',
       tags: req.query.tags || [],
       // sortDir: req.query.sortDir || 1,
       // pageIdx: req.query.pageIdx,
