@@ -4,6 +4,9 @@ import { Server } from 'socket.io'
 const SOCKET_EMIT_ADD_SONG = 'add-song'
 const SOCKET_EVENT_ADD_SONG = 'song-added'
 
+const SOCKET_EMIT_UPDATE_STATION = 'update-station'
+const SOCKET_EVENT_UPDATE_STATION = 'station-updated'
+
 var gIo = null
 
 export function setupSocketAPI(http) {
@@ -56,6 +59,10 @@ export function setupSocketAPI(http) {
     socket.on(SOCKET_EMIT_ADD_SONG, ({ song, stationId }) => {
       logger.info(`Add song [id: ${socket.id}] - ${song} ${stationId}`)
       socket.broadcast.emit(SOCKET_EVENT_ADD_SONG, { song, stationId })
+    })
+    socket.on(SOCKET_EMIT_UPDATE_STATION, (station) => {
+      logger.info(`[id: ${socket.id}] - Update station ${station._id}`)
+      socket.broadcast.emit(SOCKET_EVENT_UPDATE_STATION, station)
     })
   })
 }
