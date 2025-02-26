@@ -32,25 +32,131 @@
       ]
     }
   ],
-  "imgUrl": "https://res.cloudinary.com/dww0sism8/image/upload/fl_preserve_transparency/v1740066129/G-user_fpskkf.jpg?_s=public-apps",
+  "imgUrl": "https://res.cloudinary.com/dww0sism8/image/upload/v1740415523/hz71wx4arkad7zpyjsg9.png",
   "likedSongsStation": {
     "_id": {
       "$oid": "67b83d0e7d86f6d63dbee073"
     },
     "songs": [
       {
-        "title": "The Trooper",
-        "url": "https://www.youtube.com/embed/W4DfbinBgL4",
-        "imgUrl": "https://i.ytimg.com/vi/W4DfbinBgL4/hqdefault.jpg",
+        "title": "Hallowed Be Thy Name",
+        "url": "https://www.youtube.com/embed/HAQQUDbuudY",
+        "imgUrl": "https://i.ytimg.com/vi/HAQQUDbuudY/hqdefault.jpg",
         "addedBy": {
           "yt_id": "UCNifdat21zAF8ux2AcQBgYg",
           "fullname": "Rodolfo Carmacio",
           "imgUrl": "https://yt3.ggpht.com/ytc/AIdro_m8nVVONNJpq0VOCk2ozCtz9iVXPqiKdXl9qwn4gr42fWM=s800-c-k-c0x00ffffff-no-rj"
         },
-        "lengthInSeconds": 51,
-        "createdAt": 1584033979000,
-        "updatedAt": 1739533854214,
-        "yt_id": "W4DfbinBgL4",
+        "lengthInSeconds": 327,
+        "createdAt": 1584033963000,
+        "updatedAt": 1739574832859,
+        "yt_id": "HAQQUDbuudY",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6"
+        ]
+      },
+      {
+        "title": "Bruno Mars - It Will Rain",
+        "url": "https://www.youtube.com/embed/W-w3WfgpcGg",
+        "imgUrl": "https://i.ytimg.com/vi/W-w3WfgpcGg/hqdefault.jpg",
+        "addedBy": {
+          "yt_id": "UCdTNOsPzOJzi3fXDObomEaQ",
+          "fullname": "Hunter Crow",
+          "imgUrl": "https://yt3.ggpht.com/6yy6VZ0AnHnPnnxZtTG3ZPirWg_TwgzuJsR8Lo759rWIgGhHMUuwVufs-M_kJ-MARiaBxfv3cA=s800-c-k-c0x00ffffff-no-rj"
+        },
+        "lengthInSeconds": 358,
+        "createdAt": 1639827047000,
+        "updatedAt": 1739573888785,
+        "yt_id": "W-w3WfgpcGg",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6"
+        ]
+      },
+      {
+        "title": "Lady Gaga - Free Woman",
+        "url": "https://www.youtube.com/embed/u_cIs0_C6nA",
+        "imgUrl": "https://i.ytimg.com/vi/u_cIs0_C6nA/hqdefault.jpg",
+        "addedBy": {
+          "yt_id": "UC07Kxew-cMIaykMOkzqHtBQ",
+          "fullname": "LadyGagaVEVO",
+          "imgUrl": "https://yt3.ggpht.com/PhFThrqp58joMS9FOd7I2jPZ1TepvCKDsdnuwmFXPl-Tq0kZjw3GNtCNtsxt3dgH8bqW7RdK=s800-c-k-c0x00ffffff-no-rj"
+        },
+        "lengthInSeconds": 252,
+        "createdAt": 1590724895000,
+        "updatedAt": 1739504516911,
+        "yt_id": "u_cIs0_C6nA",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6"
+        ]
+      },
+      {
+        "title": "Reel Big Fish - Sell Out",
+        "url": "https://www.youtube.com/embed/AEKbFMvkLIc",
+        "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740383927/qnduxiurfyk7ry5eoxel.jpg",
+        "addedBy": {
+          "yt_id": "UCBWFamFv8eLgT-smKot4AQw",
+          "fullname": "ReelBigFishVEVO",
+          "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740383928/p4jdniiztrhxgq2m2kim.jpg"
+        },
+        "lengthInSeconds": 264,
+        "likedBy": [],
+        "createdAt": 1256503092000,
+        "updatedAt": 1740357910510,
+        "yt_id": "AEKbFMvkLIc",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6"
+        ]
+      },
+      {
+        "title": "Sell Out",
+        "url": "https://www.youtube.com/embed/paFtziOAh7E",
+        "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740390351/qbu0tvrbgou9m9sfnz56.jpg",
+        "addedBy": {
+          "yt_id": "UCJgI6NTY8Vxq8Z4gryYNIkQ",
+          "fullname": "Reel Big Fish - Topic",
+          "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740390352/xyor5oqwc746iqxclj42.jpg"
+        },
+        "lengthInSeconds": 372,
+        "likedBy": [],
+        "createdAt": 1724993813000,
+        "updatedAt": 1740373142997,
+        "yt_id": "paFtziOAh7E",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6"
+        ]
+      },
+      {
+        "title": "Daft Punk - Around the World (Official Audio)",
+        "url": "https://www.youtube.com/embed/dwDns8x3Jb4",
+        "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740412890/f64zewxvvstaken77zyi.jpg",
+        "addedBy": {
+          "yt_id": "UC_kRDKYrUlrbtrSiyu5Tflg",
+          "fullname": "Daft Punk",
+          "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740412891/sl5ou2enobllx4cizsnv.jpg"
+        },
+        "lengthInSeconds": 340,
+        "likedBy": [],
+        "createdAt": 1434042518000,
+        "updatedAt": 1740362684774,
+        "yt_id": "dwDns8x3Jb4",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6"
+        ]
+      },
+      {
+        "title": "a-ha - Take On Me (Official Video) [Remastered in 4K]",
+        "url": "https://www.youtube.com/embed/djV11Xbc914",
+        "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740482412/h68uuooux27uaw6dhlul.jpg",
+        "addedBy": {
+          "yt_id": "UCeEi1My3KTXHT0SG1JkR9gA",
+          "fullname": "a-ha",
+          "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740482413/qcqn7p0chsmhvujnalwu.jpg"
+        },
+        "lengthInSeconds": 165,
+        "likedBy": [],
+        "createdAt": 1262800709000,
+        "updatedAt": 1740406491879,
+        "yt_id": "djV11Xbc914",
         "likedByUsers": [
           "67b5bdfac770ab740f4374d6"
         ]
@@ -69,7 +175,7 @@
   },
   "username": "admin",
   "password": "$2b$10$z7EEe0.KYXJJBIpzrtM8Ue5DMu1cGpu/8VTpR0wUnI20bF.d9/Tpq",
-  "fullname": "Godmin",
+  "fullname": "Admin adminov",
   "imgUrl": "https://res.cloudinary.com/dww0sism8/image/upload/v1740077686/Untitled_bfozvu.png",
   "isAdmin": true
 },
@@ -83,6 +189,61 @@
   "imgUrl": null,
   "isAdmin": null,
   "likedSongsStation": {
+    "songs": [
+      {
+        "title": "SUICIDE SILENCE - Unanswered (OFFICIAL VIDEO)",
+        "url": "https://www.youtube.com/embed/_Yr5rn3Sv_4",
+        "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740337614/fabs5fjbvq35nrdsxkgq.jpg",
+        "addedBy": {
+          "yt_id": "UCnK9PxMozTYs8ELOvgMNKFA",
+          "fullname": "Century Media Records",
+          "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740337615/uqfev12qhxvn3kugnuie.jpg"
+        },
+        "lengthInSeconds": 291,
+        "likedBy": [],
+        "createdAt": 1225838702000,
+        "updatedAt": 1740321991054,
+        "yt_id": "_Yr5rn3Sv_4",
+        "likedByUsers": [
+          "67b9c300c94ccd8398019e02"
+        ]
+      },
+      {
+        "title": "The Trooper",
+        "url": "https://www.youtube.com/embed/W4DfbinBgL4",
+        "imgUrl": "https://i.ytimg.com/vi/W4DfbinBgL4/hqdefault.jpg",
+        "addedBy": {
+          "yt_id": "UCNifdat21zAF8ux2AcQBgYg",
+          "fullname": "Rodolfo Carmacio",
+          "imgUrl": "https://yt3.ggpht.com/ytc/AIdro_m8nVVONNJpq0VOCk2ozCtz9iVXPqiKdXl9qwn4gr42fWM=s800-c-k-c0x00ffffff-no-rj"
+        },
+        "lengthInSeconds": 51,
+        "createdAt": 1584033979000,
+        "updatedAt": 1739533854214,
+        "yt_id": "W4DfbinBgL4",
+        "likedByUsers": [
+          "67b5bdfac770ab740f4374d6",
+          "67b9c300c94ccd8398019e02"
+        ]
+      }
+    ],
+    "createdBy": {
+      "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740086846/ohum8u1qpefvb0lmwgkt.jpg"
+    },
+    "name": "Liked Songs",
+    "yt_id": "THE-CAKE-IS-A-LIE"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bb78fa2a27066a1dab216c"
+  },
+  "username": "oren",
+  "password": "$2b$10$KXd318Cs/Zyd58ZQl7kxh.U.WzwHlbLqm8LaY7iVQTIpIqmLiMGoS",
+  "fullname": "Oren Shaya",
+  "imgUrl": "https://res.cloudinary.com/dww0sism8/image/upload/v1740340218/w839duacm7jnbbaxwy7n.png",
+  "isAdmin": null,
+  "likedSongsStation": {
     "songs": [],
     "createdBy": {
       "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740086846/ohum8u1qpefvb0lmwgkt.jpg"
@@ -93,71 +254,19 @@
 },
 {
   "_id": {
-    "$oid": "67b9dd2083f9296ea18d716d"
+    "$oid": "67bcb7c8b5ea8b96efc0f1c2"
   },
-  "username": "asd",
-  "password": "$2b$10$jOvCKmJfsu7iXyKCDxIAZ.dR4Ttnv1nAQJ8185mezw5JHHxadt1TC",
+  "username": "shahar",
+  "password": "$2b$10$5zD5OJ0McgG2FfU6NW58dO//jx4kbj3OWBspv12OytZUyXePropvK",
   "fullname": null,
-  "imgUrl": "/src/assets/img/G-user.png",
-  "isAdmin": null
-},
-{
-  "_id": {
-    "$oid": "67b9df6383f9296ea18d716e"
-  },
-  "username": "newuser",
-  "password": "$2b$10$XgP9smFguSA6kw1VYcPOteRXgltJ37KgBaYtD4a8uRac1t/ukfhLK",
-  "fullname": null,
-  "imgUrl": "/src/assets/img/G-user.png",
-  "isAdmin": null
-},
-{
-  "_id": {
-    "$oid": "67b9e23783f9296ea18d716f"
-  },
-  "username": "new123",
-  "password": "$2b$10$beXemlHI3BmueDIbA58XxuBNd7a/gWj4bE5fA/amSphwfSJ00eYUy",
-  "fullname": null,
-  "imgUrl": "/src/assets/img/G-user.png",
-  "isAdmin": null
-},
-{
-  "_id": {
-    "$oid": "67b9e26983f9296ea18d7170"
-  },
-  "username": "1234",
-  "password": "$2b$10$MADlQNmFSdOnTmzTNnzkp.NLwEdc/tfuRSaAq33cMVsdArmdCDake",
-  "fullname": null,
-  "imgUrl": "/src/assets/img/G-user.png",
-  "isAdmin": null
-},
-{
-  "_id": {
-    "$oid": "67b9e30b83f9296ea18d7171"
-  },
-  "username": "12345",
-  "password": "$2b$10$TDa9YpFVUtoBkotoCRyWcO6yDdfh/IKjVG9D5EGr9mYD0FT4kymOS",
-  "fullname": null,
-  "imgUrl": "/src/assets/img/G-user.png",
-  "isAdmin": null
-},
-{
-  "_id": {
-    "$oid": "67b9e38e83f9296ea18d7172"
-  },
-  "username": "new1234",
-  "password": "$2b$10$OSOCmUO7XK0oXT5ztfgJk.rqUbe.Xyi5GFp3pl5H3gwvqDwQnkmSa",
-  "fullname": null,
-  "imgUrl": "/src/assets/img/G-user.png",
-  "isAdmin": null
-},
-{
-  "_id": {
-    "$oid": "67b9f8e083f9296ea18d7173"
-  },
-  "username": "123123",
-  "password": "$2b$10$R3EvXrHauNOHPx37uWXrC.EHTZl429IjNMvE9L0jJQF1eRKF0qU.i",
-  "fullname": null,
-  "imgUrl": "/src/assets/img/G-user.png",
-  "isAdmin": null
+  "imgUrl": "https://res.cloudinary.com/dww0sism8/image/upload/v1740077686/Untitled_bfozvu.png",
+  "isAdmin": null,
+  "likedSongsStation": {
+    "songs": [],
+    "createdBy": {
+      "imgUrl": "https://res.cloudinary.com/dsw8rfwb7/image/upload/v1740086846/ohum8u1qpefvb0lmwgkt.jpg"
+    },
+    "name": "Liked Songs",
+    "yt_id": "THE-CAKE-IS-A-LIE"
+  }
 }]
