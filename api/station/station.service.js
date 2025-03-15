@@ -270,12 +270,14 @@ async function generateStation(prompt) {
       messages: [
         {
           role: 'user',
-          content: `Generate a ${prompt} playlist with one song per line, no extra text.`,
+          content: `Generate a ${prompt} playlist with one song per line, no extra text, up to 10 songs.`,
         },
       ],
     })
 
     return completion.choices[0].message.content
+      .split('\n')
+      .map((s) => s.trim())
   } catch (err) {
     logger.error('cannot insert station', err)
     throw err

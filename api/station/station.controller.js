@@ -31,13 +31,17 @@ export async function getStationById(req, res) {
 export async function generateStation(req, res) {
   try {
     const prompt = req.params.prompt
+    // NOTE: unmark next line to send calls (instead of using dummy data)
     // const songs = await stationService.generateStation(prompt)
     const songs =
       'Костя Киселев — Возьми МоЮ Руку  \nHard Bass School — Давай Райс  \nXS Project — Гоп Стоп  \nLittle Big — Go Bananas  \nArt of Vain — Rave Night  \nMax Barskih — Rave Love  \nNikita Kagero — Rave On  \nDJ Groove — Rave All Night  \nEugenia — Neon Rave  \nTatarka — Rave Revolution  \nIvan Dorn — Снова  \nArsenium — Rave Fever  \nMiyagi & Andy Panda — Rave Mood  \nKalush Orchestra — Immortal  \nMALINA — Тает Лед  '
+        .split('\n')
+        .map((s) => s.trim())
+
     res.json(songs)
   } catch (err) {
-    logger.error('Failed to get station', err)
-    res.status(400).send({ err: 'Failed to get station' })
+    logger.error('Failed to generate station', err)
+    res.status(400).send({ err: 'Failed to generate station' })
   }
 }
 
