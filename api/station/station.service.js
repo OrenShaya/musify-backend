@@ -1,3 +1,4 @@
+import OpenAI from 'openai'
 import { ObjectId } from 'mongodb'
 
 import { logger } from '../../services/logger.service.js'
@@ -5,6 +6,7 @@ import { makeId } from '../../services/util.service.js'
 import { dbService } from '../../services/db.service.js'
 import { asyncLocalStorage } from '../../services/als.service.js'
 
+const client = new OpenAI()
 const PAGE_SIZE = 3
 
 export const stationService = {
@@ -16,6 +18,7 @@ export const stationService = {
   update,
   addSong,
   addStationMsg,
+  generateStation,
   removeStationMsg,
   likeSong,
   unlikeSong,
@@ -260,6 +263,25 @@ async function addStationMsg(stationId, msg) {
   }
 }
 
+async function generateStation(prompt) {
+  try {
+    const completion = await client.chat.completions.create({
+      model: 'o1-mini',
+      messages: [
+        {
+          role: 'user',
+          content: `Generate a ${prompt} playlist with one song per line, no extra text.`,
+        },
+      ],
+    })
+
+    return completion.choices[0].message.content
+  } catch (err) {
+    logger.error('cannot insert station', err)
+    throw err
+  }
+}
+
 async function removeStationMsg(stationId, msgId) {
   try {
     const criteria = { _id: ObjectId.createFromHexString(stationId) }
@@ -276,11 +298,11 @@ async function removeStationMsg(stationId, msgId) {
 
 function _buildCriteria(filterBy) {
   const criteria = {}
-  
+
   if (filterBy.name && filterBy.name.trim()) {
     criteria.name = { $regex: filterBy.name.trim(), $options: 'i' }
   }
-  
+
   if (filterBy.tags && filterBy.tags.length) {
     criteria.tags = { $in: filterBy.tags }
   }

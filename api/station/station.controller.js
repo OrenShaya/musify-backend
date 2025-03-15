@@ -28,15 +28,28 @@ export async function getStationById(req, res) {
   }
 }
 
+export async function generateStation(req, res) {
+  try {
+    const prompt = req.params.prompt
+    // const songs = await stationService.generateStation(prompt)
+    const songs =
+      'Костя Киселев — Возьми МоЮ Руку  \nHard Bass School — Давай Райс  \nXS Project — Гоп Стоп  \nLittle Big — Go Bananas  \nArt of Vain — Rave Night  \nMax Barskih — Rave Love  \nNikita Kagero — Rave On  \nDJ Groove — Rave All Night  \nEugenia — Neon Rave  \nTatarka — Rave Revolution  \nIvan Dorn — Снова  \nArsenium — Rave Fever  \nMiyagi & Andy Panda — Rave Mood  \nKalush Orchestra — Immortal  \nMALINA — Тает Лед  '
+    res.json(songs)
+  } catch (err) {
+    logger.error('Failed to get station', err)
+    res.status(400).send({ err: 'Failed to get station' })
+  }
+}
+
 export async function addStation(req, res) {
   const { loggedinUser, body: station } = req
 
   try {
-     if (!station?.isArtist) {
+    if (!station?.isArtist) {
       station.createdBy = loggedinUser
-      station.createdBy.createdAt=Date.now()
+      station.createdBy.createdAt = Date.now()
     }
-    
+
     const addedStation = await stationService.add(station)
     res.json(addedStation)
   } catch (err) {

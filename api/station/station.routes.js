@@ -15,6 +15,7 @@ import {
   addStationMsg,
   removeStationMsg,
   unlikeSong,
+  generateStation,
 } from './station.controller.js'
 
 const router = express.Router()
@@ -24,6 +25,8 @@ const router = express.Router()
 
 router.get('/', log, getStations)
 router.get('/:id', log, getStationById)
+router.get('/generate/:prompt', log, generateStation)
+
 router.post('/', log, requireAuth, addStation)
 router.post('/:stationId/:songId/like', log, requireAuth, likeSong)
 router.post('/:stationId/:songId/unlike', log, requireAuth, unlikeSong)
