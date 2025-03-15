@@ -31,8 +31,9 @@ export async function getStationById(req, res) {
 export async function generateStation(req, res) {
   try {
     const prompt = req.params.prompt
-    // NOTE: unmark next line to send calls (instead of using dummy data)
+    // NOTE: uncomment next line to use Open-AI's API
     // const songs = await stationService.generateStation(prompt)
+    // NOTE: uncomment next line to use dummy data
     const songs =
       'Костя Киселев — Возьми МоЮ Руку  \nHard Bass School — Давай Райс  \nXS Project — Гоп Стоп  \nLittle Big — Go Bananas  \nArt of Vain — Rave Night  \nMax Barskih — Rave Love  \nNikita Kagero — Rave On  \nDJ Groove — Rave All Night  \nEugenia — Neon Rave  \nTatarka — Rave Revolution  \nIvan Dorn — Снова  \nArsenium — Rave Fever  \nMiyagi & Andy Panda — Rave Mood  \nKalush Orchestra — Immortal  \nMALINA — Тает Лед  '
         .split('\n')

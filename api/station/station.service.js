@@ -1,4 +1,5 @@
 import OpenAI from 'openai'
+
 import { ObjectId } from 'mongodb'
 
 import { logger } from '../../services/logger.service.js'
@@ -6,7 +7,12 @@ import { makeId } from '../../services/util.service.js'
 import { dbService } from '../../services/db.service.js'
 import { asyncLocalStorage } from '../../services/als.service.js'
 
-const client = new OpenAI()
+if (process.env.OPENAI_API_KEY) {
+  var client = new OpenAI()
+} else {
+  console.info('No OPENAI_API_KEY. see README for further instructions')
+}
+
 const PAGE_SIZE = 3
 
 export const stationService = {
