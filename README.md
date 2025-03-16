@@ -6,7 +6,7 @@
 
 ### `/api/station`
 
-- Includes openai integration
+- Includes openai integration (Requires OPENAI_API_KEY in .env)
 
 ## For developer -- steps to run
 
