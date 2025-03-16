@@ -6,6 +6,8 @@
 
 ### `/api/station`
 
+- Includes openai integration
+
 ## For developer -- steps to run
 
 - clone repo
